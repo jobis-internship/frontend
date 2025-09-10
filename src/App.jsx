@@ -5,7 +5,7 @@ import { Input } from "./components/input";
 function App() {
   return (
     <div style={{ padding: "40px", maxWidth: "300px", margin: "0 auto" }}>
-      <h1>컴포넌트 미리보기</h1>
+      <h1>컴포넌트 프리뷰</h1>
       <Button /> {}
       <Input />
       {}
