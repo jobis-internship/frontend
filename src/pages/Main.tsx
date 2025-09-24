@@ -3,41 +3,47 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Header from "../components/mainComponents/Header"
 import WriteCompo from '../components/mainComponents/ListComponent';
+import { useNavigate } from 'react-router-dom';
 
 export default function DashBoard() {
+  const navigate = useNavigate()
   return (
     <>
       <Header/>
-      <div css={css`
-        margin:30px 140px;
-      `}>
-        <Div>
+      <Div>
+        <Nav>
           <h1>게시글 목록</h1>
-          <Button>새 게시글 작성</Button>
-        </Div>
+          <Button onClick={()=>{
+            navigate('/post')
+          }}>새 게시글 작성</Button>
+        </Nav>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell width="40%">제목</TableCell>
               <TableCell width="25%">작성자</TableCell>
-              <TableCell width="28%">작성일</TableCell>
-              <TableCell width="7%">관리</TableCell>
+              <TableCell width="25%">작성일</TableCell>
+              <TableCell width="10%">관리</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <WriteCompo/>
           </TableBody>
         </Table>
-      </div>
+      </Div>
     </>
   )
 }
 
 const Div = styled.div`
+  margin:30px 200px;
+`
+
+const Nav = styled.div`
   display:flex;
   align-items:center;
   justify-content:space-between;
-  /* margin:30px 100px; */
+  margin-top: 30px;
 `
 
 const Button = styled.button`
