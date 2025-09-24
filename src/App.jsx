@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./components/button";
 import { Input } from "./components/input";
+import { PwInput } from "./components/pwInput";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <h1>컴포넌트 프리뷰</h1>
       <Button /> {}
       <Input />
+      <PwInput />
       {}
     </div>
   );
