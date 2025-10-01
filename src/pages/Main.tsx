@@ -1,49 +1,51 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Header from "../components/mainComponents/Header"
 import WriteCompo from '../components/mainComponents/ListComponent';
 import { useNavigate } from 'react-router-dom';
+
 
 export default function DashBoard() {
   const navigate = useNavigate()
   return (
     <>
       <Header/>
-      <Div>
+      <Container>
         <Nav>
           <h1>게시글 목록</h1>
-          <Button onClick={()=>{
-            navigate('/post')
-          }}>새 게시글 작성</Button>
+          <Button onClick={() => navigate('/post')}>새 게시글 작성</Button>
         </Nav>
+        <TableDiv>
         <Table>
-          <TableHead>
+          <thead>
             <TableRow>
               <TableCell width="40%">제목</TableCell>
               <TableCell width="25%">작성자</TableCell>
               <TableCell width="25%">작성일</TableCell>
               <TableCell width="10%">관리</TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
-            <WriteCompo/>
-          </TableBody>
+          </thead>
+          <tbody>
+            <WriteCompo />
+          </tbody>
         </Table>
-      </Div>
+        </TableDiv>
+      </Container>
     </>
   )
 }
 
-const Div = styled.div`
-  margin:30px 200px;
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
 `
 
 const Nav = styled.div`
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-top: 30px;
+  margin-bottom: 20px;
 `
 
 const Button = styled.button`
@@ -60,32 +62,29 @@ const Button = styled.button`
   }
 `
 
-const Table = styled.table`
-  width:100%;
-  padding:0 20px;
-  border:1px solid #d5d5d5;
-  border-collapse: collapse;
+const TableDiv = styled.div`
+  border: 1px solid #d5d5d5;
+  border-radius: 10px;
 `
 
-const TableHead = styled.thead`
-  background-color: #f0f0f0; 
-  text-align: left;
-  color: #666;
-  padding:20px;
-`;
+const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
 
-const TableBody = styled.tbody`
-  color: #333;
-`;
+`
 
 export const TableRow = styled.tr`
+  background-color: #f0f0f0; 
   border-bottom: 1px solid #d5d5d5;
-  padding:20px;
-`;
+`
 
 export const TableCell = styled.td`
-  padding: 12px 0 12px 38px;
   height: 58px;
+  padding: 12px 0 12px 38px;
   font-size: 20px;
   font-weight: bold;
-`;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+`

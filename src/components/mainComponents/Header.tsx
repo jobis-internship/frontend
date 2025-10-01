@@ -19,7 +19,7 @@ const Head = styled.div`
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding: 20px;
+  padding: 0 30px;
   border-bottom: 1px solid gray;
 `
 
@@ -29,8 +29,10 @@ const SearchLogout = styled.div`
 `;
 
 const SearchInput = styled.input`
-  padding: 6px 10px;
-  border-radius: 20px;
+  width: 230px;
+  height: 26px;
+  padding: 6px 14px;
+  border-radius: 26px;
   border: 1px solid #ccc;
   outline: none;
 `;
@@ -40,5 +42,7 @@ const LogoutButton = styled.button`
   border: none;
   color: #555;
   cursor: pointer;
+  font-weight: 600;
+  font-size:14px;
 `;
 

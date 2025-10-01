@@ -3,8 +3,9 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { TableCell, TableRow } from '../../pages/Main';
+import { TableCell,  } from '../../pages/Main';
 import { useNavigate } from 'react-router-dom';
+import datas from './data';
 
 type Product = {
   id: number;
@@ -17,11 +18,9 @@ type Product = {
   };
 };
 
-
-
 export default function WriteCompo() {
 
-  let [data, setData] = useState<Product[]>([])
+  let [data, setData] = useState<Product[]>(datas)
 
 
   let navigate = useNavigate()
@@ -78,3 +77,8 @@ const DeleteButton = styled.div`
   color: #ef4444;
   cursor: pointer;
 `;
+
+const TableRow = styled.tr`
+  background-color: white;
+  border-bottom: 1px solid #d5d5d5;
+`
