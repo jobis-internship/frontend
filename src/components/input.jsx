@@ -11,7 +11,7 @@ export const Input = () => {
 
 const InputStyle = styled.input`
   border-radius: 6px;
-  width: 100%;
+  width: 95%;
   height: 52px;
   font-size: 18px;
   padding: 0 12px;
