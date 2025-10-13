@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../components/input";
 import { PwInput } from "../components/pwInput";
 import { Button } from "../components/button";
 import "../css/login.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { loginRequest } from "../api/login";
 
 function Login() {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await loginRequest(username, password);
+      alert("로그인 성공!");
+      navigate("/home");
+    } catch {
+      alert("로그인 실패");
+    }
+  };
+
   return (
     <div className="login-root">
       <div className="login-card">

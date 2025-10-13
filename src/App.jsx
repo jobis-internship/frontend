@@ -1,21 +1,14 @@
-import React from "react";
-import { Button } from "./components/button";
-import { Input } from "./components/input";
-import { PwInput } from "./components/pwInput";
+import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
+import Home from "./pages/Home";
 
 function App() {
-  // return (
-  //   // <div style={{ padding: "40px", maxWidth: "300px", margin: "0 auto" }}>
-  //   //   <h1>컴포넌트 프리뷰</h1>
-  //   //   <Button /> {}
-  //   //   <Input />
-  //   //   <PwInput />
-  //   //   {}
-  //   // </div>
-  //
-  // );
-  return <Login />;
+  return (
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
+  );
 }
 
 export default App;
